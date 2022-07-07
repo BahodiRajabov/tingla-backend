@@ -1,0 +1,138 @@
+{
+    "/api/auth/signup": {
+        "post": {
+            "description": "Sign up new user.",
+            "tags": [
+                "Auth"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/UserSignUp"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/auth/login": {
+        "post": {
+            "description": "Login user.",
+            "tags": [
+                "Auth"
+            ],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "Body",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definitions/UserLogin"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/auth/validate": {
+        "get": {
+            "description": "Check if token is valid.",
+            "tags": [
+                "Auth"
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/users/sessions": {
+        "get": {
+            "description": "Get user sessions.",
+            "tags": [
+                "Users"
+            ],
+            "parameters": [
+                {
+                    "in": "header",
+                    "name": "authorization",
+                    "required": true,
+                    "schema": {
+                        "type":"string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/users/sessions/{id}/terminate": {
+        "delete": {
+            "description": "Detele session by id.",
+            "tags": [
+                "Users"
+            ],
+            "parameters": [
+                {
+                    "in": "header",
+                    "name": "authorization",
+                    "required": true,
+                    "schema": {
+                        "type":"string"
+                    }
+                },
+                {
+                    "in": "path",
+                    "name": "id",
+                    "required": true,
+                    "schema": {
+                        "type":"integer"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    },
+    "/api/users/sessions/terminateAll": {
+        "delete": {
+            "description": "Detele all sessions without current.",
+            "tags": [
+                "Users"
+            ],
+            "parameters": [
+                {
+                    "in": "header",
+                    "name": "authorization",
+                    "required": true,
+                    "schema": {
+                        "type":"string"
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "description": "OK"
+                }
+            }
+        }
+    }
+}

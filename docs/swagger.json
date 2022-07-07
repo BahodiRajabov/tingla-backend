@@ -1,0 +1,19 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Tingla API Docs",
+        "description": "This is a simple documentation for Tingla API",
+        "termsOfService": "http://swagger.io/terms/"
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "Authorization endpoints."
+        }
+    ]
+}
